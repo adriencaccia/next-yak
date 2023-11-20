@@ -18,7 +18,7 @@ function generateKanjiComponentFile() {
     const styled = libs[lib];
 
     const fileContent = `
-"use client";    
+"use client";
 import React, { type FunctionComponent } from 'react';
 import ${lib === "next-yak" ? `{ styled as ${styled} }` : `{ ${styled} }`} from '${lib}';
 
@@ -33,7 +33,7 @@ const JapaneseCard = ${styled}.div\`
     background-color: #fff;
     transition: box-shadow 0.3s;
     &:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.22);
     }
 \`;
 
@@ -44,7 +44,7 @@ const Kanji${index + 1}Character = ${styled}(JapaneseCard)\`
   &:before {
     display: block;
     font-size: 2em;
-    color: #333;
+    color: #313131;
     content: '${kanji}';
   }
 \`;

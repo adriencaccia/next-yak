@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-"use client";    
+"use client";
 import React, { type FunctionComponent } from 'react';
 import { styled as styledYak } from 'next-yak';
 
