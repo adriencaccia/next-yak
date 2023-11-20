@@ -36,10 +36,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build benchmark suite
-        run: cd packages/benchmark && pnpm run codspeed 
+        run: cd packages/benchmark && pnpm run codspeed
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v1
         with:
           working-directory: "packages/benchmark"
-          run: NODE_ENV=production node --enable-source-maps ./codspeed/dist/index.bench.mjs
           token: ${{ secrets.CODSPEED_TOKEN }}
+          run: |
+            NODE_ENV=production node --enable-source-maps ./codspeed/dist/index.bench.mjs;
+            pnpm vitest bench;
