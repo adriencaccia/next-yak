@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@codspeed/vitest-plugin@2.3.1':
+    hash: v222a3yfoo2xmjusnjgdz25fty
+    path: patches/@codspeed__vitest-plugin@2.3.1.patch
+
 importers:
 
   .:
@@ -35,7 +40,7 @@ importers:
         version: 2.2.0(benchmark@2.1.4)
       '@codspeed/vitest-plugin':
         specifier: ^2.3.1
-        version: 2.3.1(vite@4.4.9)(vitest@1.0.0-beta.4)
+        version: 2.3.1(patch_hash=v222a3yfoo2xmjusnjgdz25fty)(vite@4.4.9)(vitest@1.0.0-beta.4)
       '@types/benchmark':
         specifier: 2.1.5
         version: 2.1.5
@@ -531,7 +536,7 @@ packages:
       node-gyp-build: 4.6.1
     dev: true
 
-  /@codspeed/vitest-plugin@2.3.1(vite@4.4.9)(vitest@1.0.0-beta.4):
+  /@codspeed/vitest-plugin@2.3.1(patch_hash=v222a3yfoo2xmjusnjgdz25fty)(vite@4.4.9)(vitest@1.0.0-beta.4):
     resolution: {integrity: sha512-/e4G2B/onX/hG/EjUU/NpDxnIryeTDamVRTBeWfgQDoex3g7GDzTwoQktaU5l/Asw3ZjEErQg+oQVToQ6jYZlA==}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
@@ -541,6 +546,7 @@ packages:
       vite: 4.4.9(@types/node@20.4.5)
       vitest: 1.0.0-beta.4
     dev: true
+    patched: true
 
   /@emotion/is-prop-valid@1.2.1:
     resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
