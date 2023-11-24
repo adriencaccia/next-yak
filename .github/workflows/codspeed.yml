@@ -44,4 +44,4 @@ jobs:
           token: ${{ secrets.CODSPEED_TOKEN }}
           run: |
             NODE_ENV=production node --enable-source-maps ./codspeed/dist/index.bench.mjs;
-            pnpm vitest bench;
+            NODE_ENV=production pnpm vitest bench;
