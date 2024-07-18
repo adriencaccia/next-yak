@@ -2,17 +2,17 @@ name: codspeed-benchmarks
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
-      - 'packages/next-yak/**'
-      - 'packages/benchmark/**'
-      - '.github/workflows/codspeed.yml'
+      - "packages/next-yak/**"
+      - "packages/benchmark/**"
+      - ".github/workflows/codspeed.yml"
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
-      - 'packages/next-yak/**'
-      - 'packages/benchmark/**'
-      - '.github/workflows/codspeed.yml'
+      - "packages/next-yak/**"
+      - "packages/benchmark/**"
+      - ".github/workflows/codspeed.yml"
   workflow_dispatch:
 
 jobs:
@@ -46,9 +46,11 @@ jobs:
       - name: Build Yak
         run: pnpm run build
       - name: Build benchmark suite
-        run: cd packages/benchmark && pnpm run codspeed 
+        run: cd packages/benchmark && pnpm run codspeed
       - name: Run benchmarks
-        uses: CodSpeedHQ/action@v1
+        uses: CodSpeedHQ/action@v2
+        env:
+          CODSPEED_DEBUG: true
         with:
           working-directory: "packages/benchmark"
           run: NODE_ENV=production node --enable-source-maps ./codspeed/dist/index.bench.mjs
